@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  direction: rtl;
+}
+
+.slick-prev::before, .slick-next::before {
+  font-size: 25px;
+  color: black !important;
+}
+
+.slick-prev, .slick-next {
+  display: block !important;
+  z-index: 1;
+
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+.carousel {
+  width: 100%; /* Adjust width as needed */
+  max-width: 100%; /* Prevent the content from overflowing */
+  height: auto; /* Maintain auto height or set a specific value */
+  overflow: hidden; /* Prevent content from overflowing the container */
+  display: flex !important; /* Keep items aligned within the carousel */
+  align-items: center; /* Vertically center the content if needed */
+}
+
+.carousel .slick-track {
+  display: flex !important; /* Ensures the slides stay within the track */
+}
+
+.carousel .slick-slide {
+  display: flex !important; /* Keeps slides in a row */
+  align-items: center; /* Vertically center content in each slide */
+  justify-content: center; /* Horizontally center content in each slide */
+}
+
+.carousel img {
+  max-width: 100%; /* Ensure images resize properly */
+  max-height: 100%; /* Keep images from exceeding container height */
+}/*# sourceMappingURL=styles.css.map */
+.slick-prev, .slick-next {
+  display: block !important;
+  z-index: 1000;
+}

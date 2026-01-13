@@ -1,0 +1,35 @@
+@if (slides && slides.length > 0) {
+  <button
+    type="button"
+    (click)="toggleAutoplay()"
+    [attr.aria-label]="autoplay ? 'עצור סליידר' : 'הפעל סליידר'"
+    [attr.title]="autoplay ? 'עצור' : 'הפעל'"
+    class="slider-toggle-button">
+    {{ autoplay ? '⏸️' : '▶️' }}
+  </button>
+
+  <ngx-slick-carousel
+    #slickCarousel
+    [config]="slideConfig"
+    class="slider img_slider"
+    role="region"
+    aria-label="סליידר תמונות ייעוץ מס"
+  >
+    @for (slide of slides; track $index) {
+      <div class="slide-content" ngxSlickItem>
+        <img
+          [src]="'./assets/' + slide.image"
+          [alt]="slide.alt || 'תמונה בנושא ייעוץ מס'"
+          role="img"
+        />
+        <div class="overlay">
+          <h3>{{ slide.title }}</h3>
+          <p>{{ slide.subtitle }}</p>
+        </div>
+      </div>
+    }
+  </ngx-slick-carousel>
+}
+@else {
+  <p role="status" aria-live="polite">נטען...</p>
+}

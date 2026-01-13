@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/scss/bootstrap";
+@import "variables.scss";
+body .uwy.userway_p1 .userway_buttons_wrapper{
+      right: calc(100vw - 50px) !important;
+}
+:root {
+  --primary-color: #ba844c;
+  --secondary-color: #c4a69f;
+  --background-light: #f5f0ec;
+  --text-dark: #4a4444;
+  --highlight: #e8dfd8;
+}
+
+div.container {
+  margin: 2rem auto;
+}
+
+body {
+  direction: rtl;
+  font-family: sans-serif;
+  text-align: right;
+
+  @media (max-width: 767px) {
+    font-size: 21px;
+
+    .uwy.userway_p1 .userway_buttons_wrapper {
+     right: calc(100vw - 90px) !important;
+      top: 20px !important;
+    }
+  }
+ 
+  @media (min-width: 767px) {
+    font-size: 24px;
+  }
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+  color: var(--primary-color); /* שימוש בצבע הראשי */
+}
+
+.back {
+  background: $Gradient; /* שימוש בצבע הראשי */
+}
+
+a {
+  color: var(--secondary-color); /* צבע משני למקושר */
+  text-decoration: underline;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--highlight); /* הדגשה בהירה בהובר */
+  }
+}
+
+section {
+  margin: 2rem auto;
+  text-align: center;
+}

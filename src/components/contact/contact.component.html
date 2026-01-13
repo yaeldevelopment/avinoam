@@ -1,0 +1,49 @@
+<div class="contact-invite" role="note" aria-label="הנעה לפעולה">
+  <h3>מחפש נדלן מקצועי ומנוסה? דבר איתי</h3>
+  <p>
+    אני אבינועם עג'מי, נדלן ותיק עם ניסיון של שנים בתחום הנדל"ן – ייעוץ, ליווי עסקאות, שיווק נכסים ומכירת דירות.
+    <br />
+    <a href="tel:0583284763" class="call-now" aria-label="חייג עכשיו 058-3284763">📞 חייג עכשיו: 058-3284763</a>
+  </p>
+</div>
+
+<div 
+  class="contact-container" 
+  [class.ishome]="ishome" 
+  [class.container]="!ishome" 
+  role="form" 
+  aria-labelledby="contactFormTitle"
+>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <h2 id="contactFormTitle" tabindex="-1">דברו איתי – נמצא את הנכס המושלם עבורכם</h2>
+    <p id="requiredFieldsNote">שדות עם כוכבית הם חובה</p>
+
+    <label for="firstName">שם פרטי <span aria-hidden="true">*</span></label>
+    <input id="firstName" formControlName="firstName" placeholder="שם פרטי" aria-required="true" aria-describedby="firstNameError requiredFieldsNote" />
+    <span *ngIf="isFieldInvalid('firstName')" id="firstNameError" role="alert">לפחות 2 אותיות</span>
+
+    <label for="lastName">שם משפחה</label>
+    <input id="lastName" formControlName="lastName" placeholder="שם משפחה" aria-describedby="lastNameError" />
+    <span *ngIf="isFieldInvalid('lastName')" id="lastNameError" role="alert">לפחות 2 אותיות</span>
+
+    <label for="phone">טלפון <span aria-hidden="true">*</span></label>
+    <input id="phone" formControlName="phone" placeholder="05X-XXXXXXX" aria-required="true" aria-describedby="phoneError requiredFieldsNote" />
+    <span *ngIf="isFieldInvalid('phone')" id="phoneError" role="alert">טלפון לא תקין</span>
+
+    <label for="email">מייל</label>
+    <input id="email" formControlName="email" placeholder="your@email.com" aria-describedby="emailError" />
+    <span *ngIf="isFieldInvalid('email')" id="emailError" role="alert">מייל לא תקין</span>
+
+    <label for="message">מה אתם מחפשים?</label>
+    <textarea id="message" formControlName="message" rows="4" placeholder="דירה למכירה / השכרה / ייעוץ נדלני / משהו אחר..."></textarea>
+
+    <button type="submit" [disabled]="form.invalid || isLoading" [attr.aria-disabled]="form.invalid || isLoading">
+      <ng-container *ngIf="isLoading"><span class="spinner" aria-hidden="true"></span></ng-container>
+      שלח
+    </button>
+  </form>
+
+  <div class="image-side d-none d-lg-block" aria-hidden="true">
+    <img src="./assets/conrtact.jpg" alt="נדלן מקצועי – צור קשר עם אבינועם עג'מי" />
+  </div>
+</div>

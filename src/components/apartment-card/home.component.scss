@@ -1,0 +1,72 @@
+.apartments-section {
+  padding: 4rem 0;
+  background: #f9fafb;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0;
+    }
+
+    .view-all-btn {
+      background: #f97316;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background: #ea580c;
+      }
+    }
+  }
+
+  .apartments-carousel {
+    .slide {
+      padding: 0 0.5rem;
+    }
+
+    // Make arrows always visible
+    .slick-prev,
+    .slick-next {
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 10;
+    }
+
+    .slick-prev {
+      left: -40px;
+    }
+
+    .slick-next {
+      right: -40px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: #f97316 !important;
+      font-size: 24px !important;
+    }
+
+    .slick-prev:hover:before,
+    .slick-next:hover:before {
+      color: #ea580c !important;
+    }
+  }
+}

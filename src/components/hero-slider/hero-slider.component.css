@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/* עוטף כל הקרוסלה */
+button {
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  top: 50px;
+  left: 5%;
+  z-index: 1111;
+  font-size: 22px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.img_slider{
+   height: 600px;
+}
+
+.slider {
+  width: 100%;
+ 
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  ::ng-deep .overlay {
+    border-radius: 0px 0px 8px 8px;
+  }
+  ::ng-deep .slick-list {
+    height: 565px !important;
+  }
+  .overlay {
+    bottom: 0;
+     width: 100%;
+  }
+}
+@media (min-width: 991px) {
+  ::ng-deep .slick-list {
+    height: 600px !important;
+  }
+}
+/* חובה כדי שהגובה יעבור פנימה */
+::ng-deep .slick-track {
+  height: 100% !important;
+  display: flex; /* כדי שהסליידים יעמדו זה ליד זה */
+}
+
+::ng-deep .slick-slide {
+  height: 100% !important;
+  outline: none;
+  display: flex; /* חשוב כדי לאפשר גובה מלא */
+  align-items: stretch;
+}
+
+::ng-deep .slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+::ng-deep .slide-content {
+  position: relative;
+  background-size: contain !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #ccc; /* צבע רקע לבדיקת הצגת האזור */
+}
+
+::ng-deep .slide-content img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (max-width: 991px) {
+  ::ng-deep .slide-content img {
+    -o-object-position: top;
+       object-position: top;
+    height: 412px !important;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media (min-width: 991px) {
+  ::ng-deep .slide-content img {
+    -o-object-position: center;
+       object-position: center;
+  }
+}
+
+/* שכבת טקסט על הרקע */
+::ng-deep .overlay {
+  height: 153px;
+  background-color: rgba(71, 67, 67, 0.92);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  position: absolute;
+}
+@media (min-width: 991px) {
+  ::ng-deep .overlay {
+    border-radius: 8px;
+    width: 500px;
+    top: 50%;
+    left: 5%;
+  }
+}
+
+::ng-deep .title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+::ng-deep .subtitle {
+  font-size: 24px;
+}
+
+/* חיצים */
+::ng-deep .slick-arrow {
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+::ng-deep .slick-prev {
+  left: auto !important;
+  right: 10px !important;
+}
+
+::ng-deep .slick-next {
+  right: auto !important;
+  left: 10px !important;
+}/*# sourceMappingURL=hero-slider.component.css.map */

@@ -1,0 +1,13 @@
+/*# sourceMappingURL=footer.component.css.map */
+.footer {    
+    position: absolute;
+    bottom: 0;
+
+    background: linear-gradient(135deg, #f2cd48, #fd803f); /* צבעים בהדרגה */
+    color: white; /* צבע טקסט */
+    text-align: center; /* מרכז את הטקסט */
+    padding: 20px; /* מרווח פנימי */
+    font-size: 18px; /* גודל הפונט */
+
+width: 100%; /* מתיחה של כותרת התחתונה לרוחב */
+}

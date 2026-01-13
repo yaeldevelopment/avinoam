@@ -1,0 +1,50 @@
+.faq-wrapper {
+  .accordion-item {
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+
+    &:not(.active){
+         .accordion-button::after{
+          transform: rotate(0deg);
+              transition: box-shadow 0.3s ease;
+       }
+    }
+    &.active {
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.25);
+     
+    }
+
+    .accordion-button {
+      background-color: #f8f9fa;
+      color: #212529;
+      font-weight: 600;
+      text-align: right;
+      font-size: 1rem;
+    &::after{
+          transition: transform 0.6s ease; // זה מוסיף אנימציה חלקה
+        margin-right: auto;
+        margin-left: inherit !important;
+    }
+    }
+
+    .accordion-body {
+      padding: 1rem;
+      background-color: #fff;
+      border-top: 1px solid #dee2e6;
+    }
+  }
+
+  @media (max-width: 576px) {
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    .accordion-button {
+      font-size: 0.95rem;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@if(showPopup){
+<div
+
+  class="popup-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="popup-title"
+  aria-describedby="popup-desc"
+>
+  <div class="popup-modal" tabindex="-1">
+    <button
+      class="close"
+      (click)="closePopup()"
+      aria-label="סגור חלון קופץ"
+    >
+      ×
+    </button>
+
+    <h2 id="popup-title">🏠 מצאתם את הבית המושלם? בואו נסגור עסקה</h2>
+
+    <p id="popup-desc">
+      אני אבינועם עגמי, מתווך נדל"ן עם ניסיון מוכח בסגירת עסקאות תוך זמן קצר.
+      בין אם אתם מחפשים לקנות, למכור או להשקיע – אני כאן כדי לוודא שתקבלו את העסקה הטובה ביותר.
+    </p>
+
+    <button
+      class="goToContact"
+      (click)="goToContact()"
+      aria-label="מעבר לטופס יצירת קשר"
+    >
+      📞 דברו איתי עכשיו
+    </button>
+  </div>
+</div>
+}
+<router-outlet></router-outlet>

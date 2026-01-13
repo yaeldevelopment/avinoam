@@ -1,0 +1,17 @@
+<div class="apartment-card">
+  <div class="card-image">
+    <img [src]="apartment.image" [alt]="apartment.title" />
+  </div>
+  <div class="card-content">
+    <h3>{{ apartment.title }}</h3>
+    <p class="location">{{ apartment.city }}, {{ apartment.neighborhood }}</p>
+    <div class="details">
+      <span class="rooms">{{ apartment.rooms }} חדרים</span>
+      <span class="size">{{ apartment.size }} מ"ר</span>
+    </div>
+    <div class="price">
+      {{ apartment.price | number:'1.0-0' }} ₪
+    </div>
+    <div class="type">{{ apartment.type === 'sale' ? 'למכירה' : 'להשכרה' }}</div>
+  </div>
+</div>

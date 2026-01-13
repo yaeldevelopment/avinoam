@@ -1,0 +1,32 @@
+<header><nav class="navbar back" role="navigation" aria-label="תפריט ראשי">
+  <div class="nav-content">
+    <a routerLink="/" class="logo">
+      <img src="./assets/logo.png" alt="אבינועם עג'מי - נדלן מקצועי | לוגו" />
+    </a>
+
+    <button
+      class="hamburger"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen"
+      aria-controls="main-nav"
+      aria-label="תפריט ראשי"
+    >
+      {{ menuOpen ? '✖' : '☰' }}
+    </button>
+
+    <ul
+      id="main-nav"
+      class="nav-links"
+      [class.open]="menuOpen"
+    >
+      <li><a routerLink="/">בית</a></li>
+      <li><a routerLink="/שאלות-ותשובות">שאלות ותשובות</a></li>
+      <li><a routerLink="/דירות">דירות</a></li>
+      <li><a routerLink="/אודות">אודות</a></li>
+      <li><a routerLink="/צור-קשר">צור קשר</a></li>
+      <li><a routerLink="/מדיניות-ופרטיות">מדיניות ופרטיות</a></li>
+    </ul>
+  </div>
+</nav>
+</header>
+<router-outlet></router-outlet>

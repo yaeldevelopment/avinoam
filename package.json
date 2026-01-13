@@ -1,0 +1,44 @@
+{
+  "name": "apartment",
+  "version": "1.0.0",
+  "description": "This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.",
+  "main": "index.js",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^20.1.4",
+    "@angular/cli": "^20.1.4",
+    "@angular/compiler-cli": "^21.0.8",
+    "@types/jasmine": "^5.1.15",
+    "jasmine-core": "^5.13.0",
+    "karma": "^6.4.4",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-coverage": "^2.2.1",
+    "karma-jasmine": "^5.1.0",
+    "karma-jasmine-html-reporter": "^2.1.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@angular/common": "^20.1.4",
+    "@angular/compiler": "^20.1.4",
+    "@angular/core": "^20.1.4",
+    "@angular/forms": "^21.0.8",
+    "@angular/platform-browser": "^20.1.4",
+    "@angular/platform-browser-dynamic": "^20.1.4",
+    "@angular/platform-server": "^21.0.8",
+    "@angular/router": "^20.1.4",
+    "bootstrap": "^5.3.7",
+    "jquery": "^3.7.1",
+    "ngx-slick-carousel": "^20.0.0",
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.22.3",
+    "zone.js": "^0.15.1"
+  }
+}

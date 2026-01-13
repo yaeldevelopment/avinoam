@@ -1,0 +1,32 @@
+@if(myForm!=undefined){
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  
+    <div>
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email">
+      @if(myForm.get('email')?.invalid && myForm.get('email')?.touched){
+      <div>
+        Enter a valid email.
+      </div>}
+    </div>
+  
+    <div>
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" type="password">
+      @if(myForm.get('password')?.invalid && myForm.get('password')?.touched){
+      <div>
+        Password must be at least 6 characters long.
+    
+  </div>
+}
+    </div>
+  
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+  </form>
+}
+@if(isAlertVisible){
+    <app-alert
+    [message]="message"
+      (alertResponse)="handleAlertResponse($event)">
+    </app-alert>
+    }
