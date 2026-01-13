@@ -12,13 +12,13 @@
     </div>
 
     @if(data$ | async; as apartments) {
-      <ngx-slick-carousel #slickCarousel="slick-carousel" [config]="slideConfig" class="apartments-carousel">
+      <owl-carousel-o #slickCarousel [options]="slideConfig" class="apartments-carousel">
         @for (apartment of apartments; track apartment.Id) {
-          <div ngxSlickItem class="slide">
+          <ng-template carouselSlide>
             <app-apartment-card [apartment]="apartment"></app-apartment-card>
-          </div>
+          </ng-template>
         }
-      </ngx-slick-carousel>
+      </owl-carousel-o>
     }
   </div>
 </section>

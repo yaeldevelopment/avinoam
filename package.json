@@ -36,8 +36,7 @@
     "@angular/router": "^21.0.0",
     "bootstrap": "^5.3.7",
     "jquery": "^3.7.1",
-    "ngx-slick-carousel": "^20.0.0",
-    "slick-carousel": "^1.8.1",
+    "ngx-owl-carousel-o": "^21.0.0",
     "sweetalert2": "^11.22.3",
     "zone.js": "^0.15.1"
   }

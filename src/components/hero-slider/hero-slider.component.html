@@ -8,27 +8,29 @@
     {{ autoplay ? '⏸️' : '▶️' }}
   </button>
 
-  <ngx-slick-carousel
+  <owl-carousel-o
     #slickCarousel
-    [config]="slideConfig"
+    [options]="slideConfig"
     class="slider img_slider"
     role="region"
     aria-label="סליידר תמונות ייעוץ מס"
   >
     @for (slide of slides; track $index) {
-      <div class="slide-content" ngxSlickItem>
-        <img
-          [src]="'./assets/' + slide.image"
-          [alt]="slide.alt || 'תמונה בנושא ייעוץ מס'"
-          role="img"
-        />
-        <div class="overlay">
-          <h3>{{ slide.title }}</h3>
-          <p>{{ slide.subtitle }}</p>
+      <ng-template carouselSlide>
+        <div class="slide-content">
+          <img
+            [src]="'./assets/' + slide.image"
+            [alt]="slide.alt || 'תמונה בנושא ייעוץ מס'"
+            role="img"
+          />
+          <div class="overlay">
+            <h3>{{ slide.title }}</h3>
+            <p>{{ slide.subtitle }}</p>
+          </div>
         </div>
-      </div>
+      </ng-template>
     }
-  </ngx-slick-carousel>
+  </owl-carousel-o>
 }
 @else {
   <p role="status" aria-live="polite">נטען...</p>

@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-hero-slider', 
    standalone: true,
-  imports: [CommonModule,SlickCarouselModule],
+  imports: [CommonModule,CarouselModule],
   templateUrl: './hero-slider.component.html',
   styleUrl: './hero-slider.component.scss'
 })
 export class HeroSliderComponent implements OnInit  {
-  @ViewChild('slickCarousel', { static: false }) slickCarousel!: SlickCarouselComponent;
-  slideConfig: any = {};
+  @ViewChild('slickCarousel', { static: false }) slickCarousel!: any;
+  slideConfig: OwlOptions = {};
   slides: any[] = [];
   autoplay = true;
   constructor(private cdr: ChangeDetectorRef) {} // Inject ChangeDetectorRef
@@ -43,17 +43,15 @@ this.slides = [
 
 
 this.slideConfig = {
-     slidesToShow: 1,
-  slidesToScroll: 1,
-  infinite: true,
+  items: 1,
+  loop: true,
   dots: false,
-  arrows: true,
+  nav: true,
   autoplay: true,
-  autoplaySpeed: 3000,
-  speed: 500, // מעבר חלק
-  cssEase: 'ease-in-out',
-    rtl: true
-  };
+  autoplayTimeout: 3000,
+  navSpeed: 500,
+  rtl: true
+};
 
 this.cdr.detectChanges(); // Force change detection after data is ready
 
