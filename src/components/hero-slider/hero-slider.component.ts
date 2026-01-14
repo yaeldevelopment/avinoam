@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-
+import { CarouselComponent } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-hero-slider', 
    standalone: true,
@@ -50,8 +50,8 @@ this.slideConfig = {
   autoplay: true,
   autoplayTimeout: 3000,
   navSpeed: 500,
-  rtl: true,
-  navText: ['קודם', 'הבא']
+  navText: ['<span aria-label="הקודם"></span>', '<span aria-label="הבא"></span>'], // טקסט ריק עם aria-label
+  rtl: true, // הפיכת כיוון לסליידר מימין לשמאל
 };
 
 this.cdr.detectChanges(); // Force change detection after data is ready
@@ -59,21 +59,19 @@ this.cdr.detectChanges(); // Force change detection after data is ready
    // When slides are loaded, the *ngIf in the template will become true and render the carousel.
     
   }
-
-
+@ViewChild('owl', { static: false })
+owl!: CarouselComponent;
 toggleAutoplay() {
   this.autoplay = !this.autoplay;
 
-  if (this.slickCarousel) {
-    if (this.autoplay) {
-      this.slickCarousel.slickPlay();
-    } else {
-      this.slickCarousel.slickPause();
-    }
+
+  if (this.autoplay) {
+    this.owl.startAutoplay();
+  } else {
+    this.owl.stopAutoplay();
   }
-
-  // עדכון הגדרות מחדש
-
+  
+  this.cdr.detectChanges();
 }
 
 }

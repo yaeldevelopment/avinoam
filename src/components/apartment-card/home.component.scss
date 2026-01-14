@@ -51,17 +51,25 @@
     }
 
     .slick-prev {
-      left: -40px;
+      right: -40px;
     }
 
     .slick-next {
-      right: -40px;
+      left: -40px;
     }
 
     .slick-prev:before,
     .slick-next:before {
       color: #f97316 !important;
       font-size: 24px !important;
+    }
+
+    .slick-prev:before {
+      content: '›' !important;
+    }
+
+    .slick-next:before {
+      content: '‹' !important;
     }
 
     .slick-prev:hover:before,
