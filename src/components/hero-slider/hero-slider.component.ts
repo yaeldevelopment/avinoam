@@ -50,7 +50,8 @@ this.slideConfig = {
   autoplay: true,
   autoplayTimeout: 3000,
   navSpeed: 500,
-  rtl: true
+  rtl: true,
+  navText: ['קודם', 'הבא']
 };
 
 this.cdr.detectChanges(); // Force change detection after data is ready
